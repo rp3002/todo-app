@@ -17,6 +17,7 @@ function App() {
 export default App;
 */
 import React, { useState } from 'react';
+import './styles.css';
 
 function App() {
   const [tasks, setTasks] = useState([]);
