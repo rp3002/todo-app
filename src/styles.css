@@ -1,30 +1,70 @@
-header {
-    text-align: center;
-    margin: 20px;
-  }
-  
-  form {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-  
-  input {
-    padding: 10px;
-    margin-right: 10px;
-  }
-  
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  li {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    background-color: #f9f9f9;
-    margin: 5px 0;
-    border-radius: 5px;
-  }
-  
+.App {
+  text-align: center;
+  background-color: #f0f8ff; /* Light blue background */
+  color: #333; /* Darker text for contrast */
+}
+
+.App-header {
+  background-color: #0f2c4b; /* Blue header */
+  padding: 20px;
+  color: white;
+}
+
+nav {
+  margin: 20px 0;
+}
+
+nav a {
+  margin: 0 15px;
+  color: white;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* List styles */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px auto; /* Center the list */
+  max-width: 600px; /* Set a maximum width */
+}
+
+li {
+  padding: 10px 0; /* Add padding to each list item */
+  border-bottom: 1px solid #ccc; /* Optional: Add a border for separation */
+  display: flex; /* Use flexbox to align items */
+  align-items: center; /* Center items vertically */
+  justify-content: space-between; /* Space items evenly */
+}
+
+/* Button styles */
+button {
+  padding: 8px 12px; /* Add padding for better button size */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Add rounded corners */
+  cursor: pointer; /* Change cursor to pointer */
+  transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+/* Styles for the Complete button */
+button.complete {
+  background-color: #28a745; /* Green color for the Complete button */
+  color: white; /* White text color */
+}
+
+button.complete:hover {
+  background-color: #016015; /* Darker green on hover */
+}
+
+/* Styles for the Delete button */
+button:last-child {
+  background-color: #c02231; /* Red for delete button */
+  color: white; /* White text for delete button */
+}
+
+button:last-child:hover {
+  background-color: #811616; /* Darker red on hover for delete button */
+}

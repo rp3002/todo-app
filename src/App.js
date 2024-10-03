@@ -1,109 +1,8 @@
-/*import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Welcome to My ToDo App!</h1>
-        <p>
-          Get started by adding your tasks.
-        </p>
-      </header>
-    </div>
-  );
-}
-
-export default App;
-*/
-
-
-
-/*
 import React, { useState } from 'react';
-import './styles.css';
-
-function App() {
-  const [tasks, setTasks] = useState([]);
-  const [taskInput, setTaskInput] = useState('');
-
-  const addTask = () => {
-    if (taskInput) {
-      setTasks([...tasks, taskInput]);
-      setTaskInput('');
-    }
-  };
-
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Welcome to My ToDo App!</h1>
-        <p>Get started by adding your tasks.</p>
-        <input
-          type="text"
-          value={taskInput}
-          onChange={(e) => setTaskInput(e.target.value)}
-          placeholder="Enter a task"
-        />
-        <button onClick={addTask}>Add Task</button>
-        <ul>
-          {tasks.map((task, index) => (
-            <li key={index}>{task}</li>
-          ))}
-        </ul>
-      </header>
-    </div>
-  );
-}
-
-export default App;
-*/
-
-/*
-import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import TaskInput from './components/TaskInput';
 import TaskList from './components/TaskList';
-import './styles.css';
-
-function App() {
-  const [tasks, setTasks] = useState([]);
-
-  const addTask = (taskText) => {
-    setTasks([
-      ...tasks,
-      { id: Date.now(), text: taskText, completed: false },
-    ]);
-  };
-
-  const handleDelete = (taskId) => {
-    const updatedTasks = tasks.filter((task) => task.id !== taskId);
-    setTasks(updatedTasks);
-  };
-
-  const handleComplete = (taskId) => {
-    const updatedTasks = tasks.map((task) =>
-      task.id === taskId ? { ...task, completed: !task.completed } : task
-    );
-    setTasks(updatedTasks);
-  };
-
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Welcome to My ToDo App!</h1>
-        <TaskInput addTask={addTask} />
-        <TaskList tasks={tasks} handleDelete={handleDelete} handleComplete={handleComplete} />
-      </header>
-    </div>
-  );
-}
-
-export default App;
-*/
-
-import React, { useState } from 'react';
-import TaskInput from './components/TaskInput';
-import TaskList from './components/TaskList';
+import RemindersPage from './components/Reminders';
 import './styles.css';
 
 function App() {
@@ -115,7 +14,7 @@ function App() {
   const addTask = (taskText) => {
     const newTasks = [
       ...tasks,
-      { id: Date.now(), text: taskText, completed: false },
+      { id: Date.now(), text: taskText, completed: false, reminder: null },
     ];
     setTasks(newTasks);
     localStorage.setItem('tasks', JSON.stringify(newTasks));
@@ -136,13 +35,31 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Welcome to My ToDo App!</h1>
-        <TaskInput addTask={addTask} />
-        <TaskList tasks={tasks} handleDelete={handleDelete} handleComplete={handleComplete} />
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <header className="App-header">
+          <h1>Welcome to My ToDo App!</h1>
+          <nav>
+            <Link to="/">Home</Link>
+            <Link to="/tasks">Tasks</Link>
+            <Link to="/reminders">Reminders</Link>
+          </nav>
+          <Routes>
+            <Route path="/" element={<h2>Overview of the App</h2>} />
+            <Route
+              path="/tasks"
+              element={
+                <>
+                  <TaskInput addTask={addTask} />
+                  <TaskList tasks={tasks} handleDelete={handleDelete} handleComplete={handleComplete} />
+                </>
+              }
+            />
+            <Route path="/reminders" element={<RemindersPage tasks={tasks} />} />
+          </Routes>
+        </header>
+      </div>
+    </Router>
   );
 }
 
