@@ -11,14 +11,14 @@ function App() {
     return savedTasks ? JSON.parse(savedTasks) : [];
   });
 
-  // Updated addTask function to handle category and priority
-  const addTask = (taskText, category, priority) => {
+  const addTask = (taskText, category, priority, reminder) => {
     const newTask = {
       id: Date.now(),
       text: taskText,
       category: category || 'General', // Default category
       priority: priority || 'Medium', // Default priority
       completed: false,
+      reminder: reminder || null, // Store reminder
     };
 
     const newTasks = [...tasks, newTask];
@@ -78,7 +78,10 @@ function App() {
                 </>
               }
             />
-            <Route path="/reminders" element={<RemindersPage tasks={tasks} />} />
+            <Route 
+              path="/reminders" 
+              element={<RemindersPage tasks={tasks} handleDelete={handleDelete} />} 
+            />
           </Routes>
         </header>
       </div>

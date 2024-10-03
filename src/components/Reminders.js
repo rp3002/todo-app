@@ -1,6 +1,6 @@
 import React from 'react';
 
-const RemindersPage = ({ tasks }) => {
+const RemindersPage = ({ tasks, handleDelete }) => {
   return (
     <div>
       <h2>Your Reminders</h2>
@@ -10,7 +10,7 @@ const RemindersPage = ({ tasks }) => {
           .map(task => (
             <li key={task.id}>
               {task.text} - Reminder: {new Date(task.reminder).toLocaleString()}
-              <button onClick={() => {/* Functionality to delete reminder */}}>Delete Reminder</button>
+              <button onClick={() => handleDelete(task.id)}>Delete Reminder</button>
             </li>
           ))}
       </ul>
