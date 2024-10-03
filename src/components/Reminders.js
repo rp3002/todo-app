@@ -3,7 +3,7 @@ import React from 'react';
 const RemindersPage = ({ tasks, handleDelete }) => {
   return (
     <div>
-      <h2>Your Reminders</h2>
+      <h2>Stay on Top of What Matters!</h2>
       <ul>
         {tasks
           .filter(task => task.reminder)
