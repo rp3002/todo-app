@@ -11,11 +11,17 @@ function App() {
     return savedTasks ? JSON.parse(savedTasks) : [];
   });
 
-  const addTask = (taskText) => {
-    const newTasks = [
-      ...tasks,
-      { id: Date.now(), text: taskText, completed: false, reminder: null },
-    ];
+  // Updated addTask function to handle category and priority
+  const addTask = (taskText, category, priority) => {
+    const newTask = {
+      id: Date.now(),
+      text: taskText,
+      category: category || 'General', // Default category
+      priority: priority || 'Medium', // Default priority
+      completed: false,
+    };
+
+    const newTasks = [...tasks, newTask];
     setTasks(newTasks);
     localStorage.setItem('tasks', JSON.stringify(newTasks));
   };
@@ -67,7 +73,7 @@ function App() {
               path="/tasks"
               element={
                 <>
-                  <TaskInput addTask={addTask} />
+                  <TaskInput addTask={addTask} /> {/* Pass updated addTask function */}
                   <TaskList tasks={tasks} handleDelete={handleDelete} handleComplete={handleComplete} />
                 </>
               }

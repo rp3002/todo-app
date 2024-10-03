@@ -3,7 +3,9 @@ import React from 'react';
 const TaskItem = ({ task, deleteTask }) => {
   return (
     <li>
-      {task}
+      <strong>{task.text}</strong> <br />
+      <span>Category: {task.category}</span> <br />
+      <span>Priority: {task.priority}</span>
       <button onClick={deleteTask}>Delete</button>
     </li>
   );
