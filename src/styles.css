@@ -40,13 +40,14 @@ li {
   justify-content: space-between; /* Space items evenly */
 }
 
-/* Button styles */
+/* Adding a margin for buttons to create distance */
 button {
   padding: 8px 12px; /* Add padding for better button size */
   border: none; /* Remove default border */
   border-radius: 5px; /* Add rounded corners */
   cursor: pointer; /* Change cursor to pointer */
   transition: background-color 0.3s; /* Smooth background color transition */
+  margin-left: 10px; /* Add left margin for spacing */
 }
 
 /* Styles for the Complete button */

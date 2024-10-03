@@ -6,10 +6,12 @@ function TaskList({ tasks, handleDelete, handleComplete }) {
       {tasks.map((task) => (
         <li key={task.id} style={{ textDecoration: task.completed ? 'line-through' : 'none' }}>
           {task.text}
-          <button className="complete" onClick={() => handleComplete(task.id)}>
-            {task.completed ? 'Undo' : 'Complete'}
-          </button>
-          <button onClick={() => handleDelete(task.id)}>Delete</button>
+          <div>
+            <button className="complete" onClick={() => handleComplete(task.id)}>
+              {task.completed ? 'Undo' : 'Complete'}
+            </button>
+            <button onClick={() => handleDelete(task.id)}>Delete</button>
+          </div>
         </li>
       ))}
     </ul>
@@ -17,3 +19,4 @@ function TaskList({ tasks, handleDelete, handleComplete }) {
 }
 
 export default TaskList;
+
