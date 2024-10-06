@@ -1,11 +1,20 @@
-.App {
-  text-align: center;
-  background-color: #f0f8ff; /* Light blue background */
+/* Global styles */
+body {
+  margin: 0;
+  background-color: #327ac7; /* Light blue background */
   color: #333; /* Darker text for contrast */
 }
 
+html, body, .App {
+  height: 100%; /* Ensure the background covers the entire page */
+}
+
+.App {
+  text-align: center;
+}
+
 .App-header {
-  background-color: #0f2c4b; /* Blue header */
+  background-color: #132b45; /* Blue header */
   padding: 20px;
   color: white;
 }
@@ -40,14 +49,28 @@ li {
   justify-content: space-between; /* Space items evenly */
 }
 
-/* Adding a margin for buttons to create distance */
+/* Button base styles */
 button {
-  padding: 8px 12px; /* Add padding for better button size */
+  padding: 10px 20px; /* Increased padding for better visuals */
   border: none; /* Remove default border */
-  border-radius: 5px; /* Add rounded corners */
+  border-radius: 8px; /* Slightly rounder corners */
   cursor: pointer; /* Change cursor to pointer */
-  transition: background-color 0.3s; /* Smooth background color transition */
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
   margin-left: 10px; /* Add left margin for spacing */
+  font-size: 16px; /* Slightly larger text for better readability */
+}
+
+/* Login/Register button styles */
+button.auth-button {
+  background-color: #f0f8ff; /* Light blue button */
+  color: #11253b; /* Dark blue text for contrast */
+}
+
+button.auth-button:hover {
+  background-color: #0a62a4; /* Darker blue on hover */
+  color: white; /* White text on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow effect */
 }
 
 /* Styles for the Complete button */
@@ -68,4 +91,19 @@ button:last-child {
 
 button:last-child:hover {
   background-color: #811616; /* Darker red on hover for delete button */
+}
+
+/* Toggle link styles (for Login/Register switch) */
+.toggle-link {
+  color: #f0f8ff; /* Light blue for visibility */
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: bold; /* Make it stand out */
+}
+
+.toggle-link:hover {
+  color: #ffb347; /* Change to a light orange on hover */
+  text-decoration: none; /* Remove underline on hover */
+  transform: scale(1.1); /* Slightly increase size on hover */
+  transition: color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
 }
