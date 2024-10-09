@@ -5,9 +5,7 @@ function TaskList({ tasks, handleDelete, handleComplete }) {
     <ul>
       {tasks.map((task) => (
         <li key={task.id} style={{ textDecoration: task.completed ? 'line-through' : 'none' }}>
-          <strong>{task.text}</strong> <br />
-          <span>Category: {task.category}</span> <br />
-          <span>Priority: {task.priority}</span>
+          <strong>{task.text}</strong>
           <div>
             <button className="complete" onClick={() => handleComplete(task.id)}>
               {task.completed ? 'Undo' : 'Complete'}

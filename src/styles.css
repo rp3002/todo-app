@@ -1,7 +1,7 @@
 /* Global styles */
 body {
   margin: 0;
-  background-color: #002751; /* Dark blue background */
+  background-color: #3e6691; /* Dark blue background */
   color: #333; /* Darker text for contrast */
 }
 
@@ -14,7 +14,7 @@ html, body, .App {
 }
 
 .App-header {
-  background-color: #3e6691; /* Blue header */
+  background-color: #002751; /* Blue header */
   padding: 20px;
   color: white;
 }

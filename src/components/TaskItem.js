@@ -4,9 +4,7 @@ const TaskItem = ({ task, deleteTask }) => {
   return (
     <li>
       <div>
-        <strong>{task.text}</strong> <br />
-        <span>Category: {task.category}</span> <br />
-        <span>Priority: {task.priority}</span>
+        <strong>{task.text}</strong>
       </div>
       <div>
         <button 
