@@ -1,7 +1,7 @@
 /* Global styles */
 body {
   margin: 0;
-  background-color: #327ac7; /* Light blue background */
+  background-color: #002751; /* Dark blue background */
   color: #333; /* Darker text for contrast */
 }
 
@@ -14,11 +14,12 @@ html, body, .App {
 }
 
 .App-header {
-  background-color: #132b45; /* Blue header */
+  background-color: #3e6691; /* Blue header */
   padding: 20px;
   color: white;
 }
 
+/* Navigation styles */
 nav {
   margin: 20px 0;
 }
@@ -31,6 +32,54 @@ nav a {
 
 nav a:hover {
   text-decoration: underline;
+}
+
+/* Auth container styles */
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto; /* Adjust height */
+  margin: 80px auto; /* Increased margin-top to move it lower */
+  max-width: 400px; /* Max width for the container */
+  background-color: #f8f9fa; /* Light background for the form */
+  padding: 15px; /* Reduced padding */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.auth-container h2 {
+  margin-bottom: 15px; /* Adjusted margin */
+  color: black; /* Change Login text to black */
+}
+
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.auth-container input {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc; /* Add border to inputs */
+  border-radius: 5px; /* Rounded corners for inputs */
+}
+
+.auth-container button {
+  padding: 10px;
+  background-color: #007bff; /* Primary button color */
+  color: white; /* Button text color */
+  border: none;
+  border-radius: 5px; /* Rounded corners for buttons */
+  cursor: pointer; /* Change cursor to pointer */
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+}
+
+.auth-container button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
 }
 
 /* List styles */
@@ -60,19 +109,6 @@ button {
   font-size: 16px; /* Slightly larger text for better readability */
 }
 
-/* Login/Register button styles */
-button.auth-button {
-  background-color: #f0f8ff; /* Light blue button */
-  color: #11253b; /* Dark blue text for contrast */
-}
-
-button.auth-button:hover {
-  background-color: #0a62a4; /* Darker blue on hover */
-  color: white; /* White text on hover */
-  transform: scale(1.05); /* Slightly enlarge on hover */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow effect */
-}
-
 /* Styles for the Complete button */
 button.complete {
   background-color: #28a745; /* Green color for the Complete button */
@@ -93,12 +129,17 @@ button:last-child:hover {
   background-color: #811616; /* Darker red on hover for delete button */
 }
 
-/* Toggle link styles (for Login/Register switch) */
+/* Styles for the toggle link */
 .toggle-link {
-  color: #f0f8ff; /* Light blue for visibility */
+  color: #007bff; /* Light blue for visibility */
   cursor: pointer;
   text-decoration: underline;
   font-weight: bold; /* Make it stand out */
+}
+
+/* Change color for the links */
+.toggle-link.black {
+  color: black; /* Change to black */
 }
 
 .toggle-link:hover {
@@ -106,4 +147,12 @@ button:last-child:hover {
   text-decoration: none; /* Remove underline on hover */
   transform: scale(1.1); /* Slightly increase size on hover */
   transition: color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+}
+
+/* Add styles for the account text */
+/* Directly targeting the paragraph elements */
+/* More specific targeting of the account text paragraphs */
+.account-text {
+  color: black; /* Set text color to black */
+  margin: 10px 0; /* Optional: Add margin for spacing */
 }

@@ -3,10 +3,19 @@ import React from 'react';
 const TaskItem = ({ task, deleteTask }) => {
   return (
     <li>
-      <strong>{task.text}</strong> <br />
-      <span>Category: {task.category}</span> <br />
-      <span>Priority: {task.priority}</span>
-      <button onClick={deleteTask}>Delete</button>
+      <div>
+        <strong>{task.text}</strong> <br />
+        <span>Category: {task.category}</span> <br />
+        <span>Priority: {task.priority}</span>
+      </div>
+      <div>
+        <button 
+          onClick={deleteTask} 
+          aria-label={`Delete task ${task.text}`}
+        >
+          Delete
+        </button>
+      </div>
     </li>
   );
 };

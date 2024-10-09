@@ -9,8 +9,13 @@ const RemindersPage = ({ tasks, handleDelete }) => {
           .filter(task => task.reminder)
           .map(task => (
             <li key={task.id}>
-              {task.text} - Reminder: {new Date(task.reminder).toLocaleString()}
-              <button onClick={() => handleDelete(task.id)}>Delete Reminder</button>
+              <span>{task.text} - Reminder: {new Date(task.reminder).toLocaleString()}</span>
+              <button 
+                onClick={() => handleDelete(task.id)}
+                aria-label={`Delete reminder for ${task.text}`}
+              >
+                Delete Reminder
+              </button>
             </li>
           ))}
       </ul>
